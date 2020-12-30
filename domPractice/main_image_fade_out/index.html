@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Landing Page Phase Out Main Image</title>
+</head>
+<body>
+    
+    <div id="opacity" class="opacity"></div>
+
+    <div class="welcome">
+        <h1 id="greeting">FLASHFOCUSSTUDIOS</h1>    
+    </div>
+    <img id="mainImg" class="mainImg" src="main.jpg" alt="">
+
+
+    <main class="main">
+        <nav class="wrapper">
+            <div class="logo">FlashFocusStudios</div>
+            <ul class="nav__links">
+                <li><a>Home</a></li>
+                <li class="drop_down"><a>Portfolio</a>
+                <ul class="drop_content">
+                    <li class="portfolios"><a href="#">Portraits</a></li>
+                    <li class="portfolios"><a href="#">Landscapes</a></li>
+                    <li class="portfolios"><a href="#">Wildlife</a></li>
+                </ul>
+                </li>
+                <li><a>Prints</a></li>
+            </ul>
+            <a class="button">Contact</a>
+        </nav>
+
+        <section id="gallery" class="gallery">
+            <img src="https://via.placeholder.com/400x300" alt="">
+            <img src="https://via.placeholder.com/400x300" alt="">
+            <img src="https://via.placeholder.com/400x300" alt="">
+            <img src="https://via.placeholder.com/400x300" alt="">
+            <img src="https://via.placeholder.com/400x300" alt="">
+            <img src="https://via.placeholder.com/400x300" alt="">
+            <img src="https://via.placeholder.com/400x300" alt="">
+            <img src="https://via.placeholder.com/400x300" alt="">
+            <img src="https://via.placeholder.com/400x300" alt="">
+        </section>
+
+
+    </main>
+
+
+
+</body>
+
+<script>
+    var body = document.getElementsByTagName("body")[0];
+    var greeting = document.getElementById("greeting");
+    var opacity = document.getElementById("opacity");
+    var mainImg = document.getElementById("mainImg");
+    var gallery = document.getElementById("gallery");
+
+
+    body.addEventListener("click",function(){
+        opacity.classList.add("opacityNone");
+        greeting.classList.add("fade");
+        mainImg.classList.add("fade");
+        gallery.classList.add("noHide");
+
+
+
+
+        //opacity.classList.remove("opacity");
+    });
+</script>
+</html>

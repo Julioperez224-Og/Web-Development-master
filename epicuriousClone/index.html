@@ -1,0 +1,194 @@
+<!-- https://www.epicurious.com/ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <title>Recipe Site</title>
+  </head>
+  <body>
+    <header>
+      <div class="menu-burger" id="menu-burger">
+        <div class="menu-burger-line line-1"></div>
+        <div class="menu-burger-line line-2"></div>
+        <div class="menu-burger-line line-3"></div>
+      </div>
+
+      <h1 class="header-logo">epicurious</h1>
+      <div class="header-social">
+        <h3><i class="fas fa-heart"></i></h3>
+        <h3><i class="fas fa-search"></i></h3>
+      </div>
+      
+      <h3 class="login">Log-in/Sign-up</h3>
+
+      <div class="social">
+        <h4>Social</h4>
+        <div class="facebook">F</div>
+        <div class="twitter">T</div>
+        <div class="instagram">I</div>
+      </div>
+    </header>
+
+    <aside class="menu">
+      <i class="fas fa-times close" id="close"></i>
+      <div class="logo">epicurious</div>
+      <a href="#">Recipes & Menus</a>
+      <a href="#">Expert Advice</a>
+      <a href="#">Ingredients</a>
+      <a href="#">Holidays & Events</a>
+      <a href="#">Video</a>
+
+      <div class="menu-social">
+        <h3>Follow Epicurious</h3>
+        <a href="#"><i class="fab fa-facebook-square"></i></a>
+        <a href="#"><i class="fab fa-twitter-square"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+
+      <a href="#" class="btn btn-login">Log-in/Sign-up</a>
+    </aside>
+    <div class="finder">
+      <form action="#">
+        <label for="search">Find a Recipe</label>
+        <div class="finder-icon">
+            <i class="fas fa-search"></i>
+            <input
+                type="text"
+                name="search"
+                id="search"
+                placeholder="lemon chicken"
+            />
+        </div>
+        
+        <a>Advance Search <i class="fas fa-arrow-right"></i></a>
+      </form>
+    </div>
+
+    <article class="links">
+      <div class="recipes">
+            <div class="recipe recipe-1">
+                <img
+                class="article-img"
+                src="https://images.unsplash.com/photo-1601582595900-c3e816e6e9e6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1347&q=80"
+                alt="Christmas Cookie"
+                />
+                <div class="recipe-text">
+                    <h2>Christmas</h2>
+                    <h3>Amazing Christmas cookie recipe</h3>
+                    <h4>By Gary Smith</h4>
+                </div>  
+            </div>
+            <hr>
+            <div class="recipe recipe-sub">
+                <img
+                class=""
+                src="https://images.unsplash.com/photo-1452195100486-9cc805987862?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                alt="Cheese"
+                />
+                <div class="recipe-text">
+                    <h2>Cheese</h2>
+                    <h3>Flavour Cheese Bomb</h3>
+                    <h4>By Chelsea Blackman</h4>
+                </div>  
+            </div>
+            <hr>
+            <div class="recipe recipe-sub">
+                <img
+                class=""
+                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1202&q=80"
+                alt="cheese burger"
+                />
+                <div class="recipe-text">
+                    <h2>Cheese Burgers</h2>
+                    <h3>Smokey Burger Goodness</h3>
+                    <h4>By Adam Lecher</h4>
+                </div>  
+            </div>
+            <hr>
+            <div class="recipe recipe-sub">
+                <img
+                class=""
+                src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                alt="Pizza"
+                />
+                <div class="recipe-text">
+                    <h2>Pizza</h2>
+                    <h3>3 Cheese Pizza</h3>
+                    <h4>By Anon</h4>
+                </div>  
+            </div>
+            <hr>
+            <section class="big-guide">
+                <figure class="big-guide-kambucha">
+                    <figcaption>The big guide</figcaption>
+                    <img src="https://images.unsplash.com/photo-1583396216852-1e1d61137170?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="kambucha">
+                </figure>
+                
+                <div class="big-guide-text">
+                    <a>The Fundamentals of Kambucha</a>
+                    <a>The Basic of Kambucha</a>
+                    <a>Best Recipes for Kambucha</a>
+                    <a>Wintery Kambucha Ale</a>
+                    <a>View the complete guide <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </section>
+        </div>
+    </article>
+    <section class="slideshow">
+        <div class="slide slide-1">
+            <a href="#" alt="muffin"></a>
+            <h3>Blueberry Muffins</h3>
+            <p>EPICURIOUS</p>
+        </div>
+
+        <div class="slide slide-2">
+            <a href="#" alt="muffin"></a>
+            <h3>Oreo Cake</h3>
+            <p>EPICURIOUS</p>
+        </div>
+
+        <div class="slide slide-3">
+            <a href="#" alt="muffin"></a>
+            <h3>Healthy Icecream</h3>
+            <p>EPICURIOUS</p>
+        </div>
+
+        <div class="slide slide-4">
+            <a href="#" alt="muffin"></a>
+            <h3>Spruce Beer</h3>
+            <p>EPICURIOUS</p>
+        </div>
+    </section>
+
+    <form action="" method="get" class="signup-form">
+        <label for="email">Get our latest recipes and expert tips right in your inbox</label>
+        <div class="input-box">
+            
+            <input type="email" id="email" name="email" placeholder="YOUR EMAIL ADDRESS">
+            <button>Sign up</button>
+        </div>
+    </form>
+    <footer>
+        <section>
+            <ul>
+                <li>Epicurious Clone</li>
+                <li>Created by Julio Perez</li>
+                <li>email: julioperez224@gmail.com</li>
+            </ul>
+        </section>
+        <div class="logo">Epicurious</div>
+        <div>Not the official site, no affiliation</div>
+    </footer>
+</body>
+  <script src="app.js"></script>
+</html>

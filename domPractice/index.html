@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        .big{
+            border: 5px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="navBar">
+        <h1 id="logo">Logo</h1>
+        <ul>
+            <p>Hey</p>
+        </ul>
+    </div>
+</body>
+
+<script>
+    var tag = document.getElementById("logo");
+    var paragraph = document.getElementsByTagName("p")[0];
+    console.log(paragraph);
+    console.log(tag);
+
+    tag.classList.add("big");
+    tag.classList.toggle("big");
+    tag.classList.toggle("big");
+
+    tag.addEventListener("click", function(){
+        alert("Logo was clicked");
+    });
+
+    paragraph.addEventListener("mouseover", function(){
+        alert("paragraph");
+    });
+    
+    </script>
+</html>

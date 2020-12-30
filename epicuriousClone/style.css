@@ -1,0 +1,557 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    box-sizing: border-box;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .menu {
+    width: 25rem;
+    height: 100vh;
+    background-color: #333;
+    position: absolute;
+    top: 0;
+    left: -25rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transition: left 0.5s;
+    -o-transition: left 0.5s;
+    transition: left 0.5s;
+    z-index: 1000;
+  }
+  
+  .menu-burger {
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-top: 1.25rem;
+    margin-left: -5rem;
+  }
+  
+  .menu .close:hover {
+    color: #555;
+  }
+  
+  .menu-burger .menu-burger-line {
+    border-top: 2px solid #888;
+    height: 0.65rem;
+  }
+  
+  .slideLeft {
+    left: 0;
+  }
+  
+  .menu .logo {
+    font-size: 3rem;
+    color: orangered;
+    font-weight: bold;
+    text-align: center;
+    padding: 5rem;
+  }
+  
+  .menu a {
+    font-size: 1.8rem;
+    margin-bottom: 4rem;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  
+  .menu i {
+    font-size: 2rem;
+    color: #888;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    margin: 2rem;
+  }
+  
+  .menu .menu-social h3 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: white;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .menu .menu-social a i {
+    font-size: 2.6rem;
+    color: orangered;
+    margin-right: 2rem;
+  }
+  
+  .menu .btn-login {
+    border: 1px solid #888;
+    padding: 1.5rem 2rem;
+    font-size: 1.5rem;
+    color: #888;
+    margin-top: 5rem;
+  }
+  
+  .menu a:hover,
+  .menu .btn-login:hover {
+    color: orangered;
+  }
+  
+  header {
+    height: 5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  header .header-logo {
+    font-size: 2.9rem;
+    color: orangered;
+    margin-left: -4rem;
+  }
+  
+  header .login,
+  header .social {
+    display: none;
+  }
+  
+  .header-social{
+      display: flex;
+      justify-content: space-evenly;
+      width: 10rem;
+  }
+  .header-social h3 i {
+    font-size: 2.4rem;
+    color: #888;
+  }
+  
+  .finder {
+    height: 40rem;
+    background-image: url(https://images.unsplash.com/photo-1505935428862-770b6f24f629?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1347&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .finder a, .finder form label{
+      color: #eee;
+      text-shadow: 2px 2px 2px rgba(255, 68, 0, 0.322);
+  }
+  
+  .finder form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100vw;
+    height: 35rem;
+  }
+  
+  .finder form label {
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 2px rgba(255, 68, 0, 0.222);
+    font-weight: bold;
+  }
+
+  .finder-icon{
+      width: 80%;
+      display: flex;
+  }
+
+  .finder-icon .fa-search{
+      font-size: 2.4rem;
+      position: absolute;
+      top: 35.5%;    
+      margin-left: 1rem;
+      z-index: 100;
+      color: #888;
+  }
+  
+  .finder form input {
+    border: none;
+    height: 5rem;
+    width: 100%;
+    opacity: 0.9;
+    font-size: 2.4rem;
+    padding-left: 5rem;
+  }
+  
+  .finder form a {
+    font-size: 2.5rem;
+    font-weight: lighter;
+    cursor: pointer;
+  }
+  .finder form a i{
+      font-size: 1.8rem;
+      margin-left: 1rem;
+  }
+  
+  .links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100vw;
+    margin-top: 1rem;
+    height: max-content;
+    overflow-y: visible;
+  }
+  
+
+.links .recipes .recipe{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.links .recipes .recipe-1 img {
+    width: 90%;
+    height: auto;
+    max-width: 60rem;
+  }
+
+.links .recipe-1 .recipe-text{
+    text-align: center;
+    letter-spacing: .2rem;
+    width: 80%;
+    background-color: white;
+    margin-top: -5rem;
+}
+
+.recipes .recipe-1 h2{
+    font-size: 2rem;
+    font-weight: lighter;
+    
+    color: lightgray;
+    
+}
+
+.recipes .recipe-1 h3{
+    color: black;
+    font-weight: 400;
+    letter-spacing: .2rem;
+    font-size: 2.4rem;
+
+}
+
+.recipes .recipe-1 h3:hover, .recipes .recipe-sub h3:hover{
+    display: inline;
+    margin-bottom: .4rem;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+
+.recipes .recipe-1 .recipe-text h4{
+    color: orangered;
+    font-weight: 300;
+}
+
+hr{
+    margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 90%;
+    color: lightgray;
+    opacity: .7;
+}
+
+
+.links .recipes .recipe-sub{
+    display: grid;
+    width: 100%;
+    height: 15rem;
+    padding: 1rem;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 100%;
+    margin-left: 2rem;
+
+    
+}
+
+
+.links .recipes .recipe-sub img{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 100%;
+    height: auto;
+    max-width: 20rem;
+}
+
+.links .recipes .recipe-sub .recipe-text{
+    text-align: left;
+    letter-spacing: .2rem;
+    width: 80%;
+    margin-left: 1rem;
+}
+
+.links .recipes .recipe-sub .recipe-text h2{
+    font-size: 1.7rem;
+    color: lightgray;
+}
+
+.links .recipes .recipe-sub .recipe-text h3{
+    font-size: 2rem;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.links .recipes .recipe-sub .recipe-text h4{
+    font-size: 1rem;
+    color: orangered;
+}
+
+.links .big-guide{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 5rem;
+    text-align:center;
+}
+
+.links .recipes .big-guide .big-guide-kambucha{
+    margin-bottom: 2rem;
+}
+
+.links .recipes .big-guide .big-guide-kambucha figcaption{
+    position: absolute;
+    width: 20rem;
+    font-size: 1.8rem;
+    background-color: orangered;
+    color: white;
+    padding: 1rem 2.5rem;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -12.5px;
+    left: 0;
+    right: 0; 
+    text-align: center;
+}
+
+.links .recipes .big-guide .big-guide-kambucha img{
+    width: 100vw;
+    max-width: 80rem;
+    height: auto;
+}
+
+.links .recipes .big-guide .big-guide-text{
+    margin: 0 auto;
+    width: 80%;
+    line-height: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.links .recipes .big-guide .big-guide-text a:nth-of-type(1){
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+.links .recipes .big-guide .big-guide-text a{
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    width: max-content;
+}
+
+.links .recipes .big-guide .big-guide-text a:last-of-type{
+    color: orangered;
+    font-weight: bolder;
+}
+
+.links .recipes .big-guide .big-guide-text a:hover{
+    border-bottom: 1px solid black;
+}
+
+.slideshow{
+    width: 100vw;
+    height: 35rem;
+    background-color: rgb(230, 230, 230);
+    margin-top: 2rem;
+    display: flex;
+    overflow-x: scroll;
+}
+
+.slideshow .slide{
+    width: 33rem;
+    height: 100%;
+    transition: all .5s ease-in;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2rem;
+    padding: 0;
+}
+
+.slideshow .slide a{
+    background-size: cover;
+    background-position: center;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+}
+
+.slideshow .slide h3{
+    font-size: 1.7rem;
+    color: black;
+    margin-top: 1rem;
+}
+
+.slideshow .slide h3{
+    font-size: 1.7rem;
+    color: rgb(112, 112, 112);
+    margin-top: 1rem;
+}
+.slideshow .slide-1 a{
+    background-image: url("https://images.unsplash.com/photo-1599320207475-3d793554fda0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80");
+}
+
+.slideshow .slide-2 a{
+    background-image: url("https://images.unsplash.com/photo-1564645218026-797631447574?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+}
+
+.slideshow .slide-3 a{
+    background-image: url("https://images.unsplash.com/photo-1585946472523-07df7e82d32e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+}
+
+.slideshow .slide-4 a{
+    background-image: url("https://images.unsplash.com/photo-1557500813-f86c2da590b3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80");
+}
+
+.signup-form{
+    background-color: orangered;
+    color: white;
+    height: 15rem;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-form label{
+    width: 60%;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.signup-form input{
+    border: none;
+    width: max-content;
+    padding: 1rem 3rem 1rem 1rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color:rgba(112, 112, 112, .6);
+    height: 5rem;
+    margin-top: 2rem;
+}
+
+.signup-form button{
+    background-color: black;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border: none;
+    padding: 1rem 3rem 1rem 1rem;
+    text-align: center;
+    height: 5rem;
+    text-transform: uppercase;
+    margin-left: -1px;
+}
+
+footer{
+    margin-top: 2rem;
+    width: 100vw;
+    display: flex;
+    background-color: orangered;
+    height: 7rem;
+    color: white;
+    justify-content: space-evenly;
+    padding-top: 1rem;
+    flex-wrap: wrap;
+}
+
+
+footer section ul li{
+    font-size: 1.2rem;
+    letter-spacing: .2rem;
+    list-style: none;
+}
+
+footer .logo{
+    font-size: 2rem;
+}
+
+footer div{
+    font-size: 1.5rem;
+}
+
+@media (min-width: 800px){
+    header{
+        width: 100vw;
+        justify-content: space-between;
+    }
+
+    .menu-burger{
+        margin-left: 5rem;
+    }
+
+    .links .recipes{
+        width: 90%;
+        justify-content: center;
+    }
+
+    .links .recipes .recipe-1 img{
+        max-width: 100rem;
+    }
+
+    .links .recipes .recipe-1 .recipe-text{
+        padding: 4rem 0;
+    }
+   
+    .links .recipes .big-guide .big-guide-kambucha img{
+        width: 750px;
+    }
+
+}
