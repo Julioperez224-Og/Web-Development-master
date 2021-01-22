@@ -5,18 +5,32 @@
 * Browsers: last 4 version
 */
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 * {
     margin: 0;
     padding: 0;
     font-size: 10px;
-    box-sizing: border-box;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    /* -webkit-box-sizing: border-box;
+    box-sizing: border-box; */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  body {
+    min-width: fit-content;
+    max-width: 100vw;
+    /* overflow-x: hidden; */
   }
   
   .menu {
     width: 25rem;
-    height: 100vh;
+    height: max-content;
     background-color: #333;
     position: absolute;
     top: 0;
@@ -26,26 +40,29 @@
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-transition: left 0.5s;
     -o-transition: left 0.5s;
     transition: left 0.5s;
     z-index: 1000;
+    padding-bottom: 30%;
   }
   
   .menu-burger {
     width: 2.75rem;
     height: 2.75rem;
     margin-top: 1.25rem;
-    margin-left: -5rem;
+    margin-left: 0rem;
+    cursor: pointer;
   }
   
   .menu .close:hover {
     color: #555;
+    cursor: pointer;
   }
   
   .menu-burger .menu-burger-line {
@@ -58,11 +75,11 @@
   }
   
   .menu .logo {
-    font-size: 3rem;
+    font-size: 2.4rem;
     color: orangered;
     font-weight: bold;
     text-align: center;
-    padding: 5rem;
+    padding: 3rem 5rem;
   }
   
   .menu a {
@@ -77,7 +94,7 @@
     font-size: 2rem;
     color: #888;
     -ms-flex-item-align: start;
-        align-self: flex-start;
+    align-self: flex-start;
     margin: 2rem;
   }
   
@@ -114,19 +131,17 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100vw;
   }
   
   header .header-logo {
-    font-size: 2.9rem;
+    font-size: 2.4rem;
     color: orangered;
-    margin-left: -4rem;
   }
   
   header .login,
@@ -134,10 +149,14 @@
     display: none;
   }
   
-  .header-social{
-      display: flex;
-      justify-content: space-evenly;
-      width: 10rem;
+  .header-social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    width: 8rem;
   }
   .header-social h3 i {
     font-size: 2.4rem;
@@ -145,15 +164,16 @@
   }
   
   .finder {
-    height: 40rem;
+    height: 50rem;
     background-image: url(https://images.unsplash.com/photo-1505935428862-770b6f24f629?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1347&q=80);
     background-size: cover;
     background-repeat: no-repeat;
   }
-
-  .finder a, .finder form label{
-      color: #eee;
-      text-shadow: 2px 2px 2px rgba(255, 68, 0, 0.322);
+  
+  .finder a,
+  .finder form label {
+    color: #eee;
+    text-shadow: 2px 2px 2px rgba(255, 68, 0, 0.322);
   }
   
   .finder form {
@@ -162,15 +182,15 @@
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 100vw;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
     height: 35rem;
   }
   
@@ -179,19 +199,21 @@
     text-shadow: 2px 2px 2px rgba(255, 68, 0, 0.222);
     font-weight: bold;
   }
-
-  .finder-icon{
-      width: 80%;
-      display: flex;
+  
+  .finder-icon {
+    width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
-
-  .finder-icon .fa-search{
-      font-size: 2.4rem;
-      position: absolute;
-      top: 35.5%;    
-      margin-left: 1rem;
-      z-index: 100;
-      color: #888;
+  
+  .finder-icon .fa-search {
+    position: absolute;
+    font-size: 2.4rem;
+    margin-left: 1.5rem;
+    margin-top: 1.2rem;
+    z-index: 100;
+    color: #888;
   }
   
   .finder form input {
@@ -208,9 +230,9 @@
     font-weight: lighter;
     cursor: pointer;
   }
-  .finder form a i{
-      font-size: 1.8rem;
-      margin-left: 1rem;
+  .finder form a i {
+    font-size: 1.8rem;
+    margin-left: 1rem;
   }
   
   .links {
@@ -219,134 +241,174 @@
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 100vw;
+    -ms-flex-align: center;
+    align-items: center;
+    /* width: 100vw; */
     margin-top: 1rem;
-    height: max-content;
-    overflow-y: visible;
+    /* height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content; */
+    /* overflow-y: visible; */
   }
   
-
-.links .recipes .recipe{
+  .links .recipes .recipe {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
-}
-
-.links .recipes .recipe-1 img {
-    width: 90%;
-    height: auto;
-    max-width: 60rem;
   }
-
-.links .recipe-1 .recipe-text{
+  
+  .links .recipes .recipe-1 .article-img {
+    width: 90%;
+    height: 350px;
+    max-width: 60rem;
+    background-image: url("https://images.unsplash.com/photo-1601582595900-c3e816e6e9e6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1347&q=80");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .links .recipe-1 .recipe-text {
     text-align: center;
-    letter-spacing: .2rem;
+    letter-spacing: 0.2rem;
     width: 80%;
+    max-width: 450px;
     background-color: white;
-    margin-top: -5rem;
-}
-
-.recipes .recipe-1 h2{
+    margin-top: -8rem;
+    padding: 3.5rem 0;
+  }
+  
+  .recipes .recipe-1 h2 {
     font-size: 2rem;
     font-weight: lighter;
-    
+  
     color: lightgray;
-    
-}
-
-.recipes .recipe-1 h3{
+  }
+  
+  .recipes .recipe-1 h3 {
     color: black;
     font-weight: 400;
-    letter-spacing: .2rem;
+    letter-spacing: 0.2rem;
     font-size: 2.4rem;
-
-}
-
-.recipes .recipe-1 h3:hover, .recipes .recipe-sub h3:hover{
+  }
+  
+  .recipes .recipe-1 h3:hover,
+  .recipes .recipe-sub h3:hover {
     display: inline;
-    margin-bottom: .4rem;
+    /* margin-bottom: 0.4rem; */
     border-bottom: 1px solid black;
     cursor: pointer;
-}
-
-.recipes .recipe-1 .recipe-text h4{
+  }
+  
+  .recipes .recipe-1 .recipe-text h4 {
     color: orangered;
     font-weight: 300;
-}
-
-hr{
+  }
+  
+  hr {
     margin: 0 auto;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    width: 90%;
+    width: 80%;
     color: lightgray;
-    opacity: .7;
-}
-
-
-.links .recipes .recipe-sub{
+    opacity: 0.7;
+  }
+  
+  .links .recipes .recipe-sub {
+    display: -ms-grid;
     display: grid;
-    width: 100%;
+    width: 80%;
     height: 15rem;
     padding: 1rem;
+    -ms-grid-columns: 40% 60%;
     grid-template-columns: 40% 60%;
+    -ms-grid-rows: 100%;
     grid-template-rows: 100%;
     margin-left: 2rem;
-
-    
-}
-
-
-.links .recipes .recipe-sub img{
+  }
+  
+  .links .recipes .recipe-sub > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  
+  .links .recipes .recipe-sub > *:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+  
+  .links .recipes .recipe-sub img {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
     grid-column: 1/2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
     grid-row: 1/2;
     width: 100%;
     height: auto;
     max-width: 20rem;
-}
-
-.links .recipes .recipe-sub .recipe-text{
+  }
+  
+  .links .recipes .recipe-sub .recipe-text {
     text-align: left;
-    letter-spacing: .2rem;
+    letter-spacing: 0.2rem;
     width: 80%;
     margin-left: 1rem;
-}
-
-.links .recipes .recipe-sub .recipe-text h2{
+  }
+  
+  .links .recipes .recipe-sub .recipe-text h2 {
     font-size: 1.7rem;
     color: lightgray;
-}
-
-.links .recipes .recipe-sub .recipe-text h3{
+  }
+  
+  .links .recipes .recipe-sub .recipe-text h3 {
     font-size: 2rem;
     font-weight: 300;
     cursor: pointer;
-}
-
-.links .recipes .recipe-sub .recipe-text h4{
+  }
+  
+  .links .recipes .recipe-sub .recipe-text h4 {
     font-size: 1rem;
     color: orangered;
-}
-
-.links .big-guide{
-    width: 100%;
+  }
+  
+  .links .big-guide {
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     margin-top: 5rem;
-    text-align:center;
-}
-
-.links .recipes .big-guide .big-guide-kambucha{
+    text-align: center;
+  }
+  
+  .guide-text-block img {
+    display: none;
+  }
+  
+  .big-guide-block {
+    display: none;
+  }
+  
+  .links .recipes .big-guide .big-guide-kambucha {
     margin-bottom: 2rem;
-}
-
-.links .recipes .big-guide .big-guide-kambucha figcaption{
+  }
+  
+  .links .recipes .big-guide .big-guide-kambucha figcaption {
     position: absolute;
     width: 20rem;
     font-size: 1.8rem;
@@ -360,134 +422,182 @@ hr{
     margin-right: auto;
     margin-top: -12.5px;
     left: 0;
-    right: 0; 
+    right: 0;
     text-align: center;
-}
-
-.links .recipes .big-guide .big-guide-kambucha img{
+  }
+  
+  .links .recipes .big-guide .big-guide-kambucha img {
     width: 100vw;
     max-width: 80rem;
     height: auto;
-}
-
-.links .recipes .big-guide .big-guide-text{
+  }
+  
+  .links .recipes .big-guide .big-guide-text {
     margin: 0 auto;
     width: 80%;
     line-height: 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
     justify-content: space-evenly;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
-}
-
-.links .recipes .big-guide .big-guide-text a:nth-of-type(1){
-    font-size: 2.2rem;
+  }
+  
+  .big-guide-text .big-guide-text-header {
+    font-size: 2.6rem;
+    font-weight: 400;
+  }
+  
+  .big-guide-text a {
+    font-size: 2rem;
     font-weight: 600;
-}
-
-.links .recipes .big-guide .big-guide-text a{
+    letter-spacing: 0.1rem;
+  }
+  
+  .links .recipes .big-guide .big-guide-text .big-guide-block a {
     margin-top: 2rem;
     font-size: 1.8rem;
     font-weight: 500;
     cursor: pointer;
+    width: -webkit-max-content;
+    width: -moz-max-content;
     width: max-content;
-}
-
-.links .recipes .big-guide .big-guide-text a:last-of-type{
+    color: black;
+  }
+  
+  .links .recipes .big-guide .big-guide-text .big-guide-send {
     color: orangered;
     font-weight: bolder;
-}
-
-.links .recipes .big-guide .big-guide-text a:hover{
+  }
+  
+  .links .recipes .big-guide .big-guide-text a:hover {
     border-bottom: 1px solid black;
-}
-
-.slideshow{
+  }
+  
+  .slideshow {
     width: 100vw;
     height: 35rem;
     background-color: rgb(230, 230, 230);
     margin-top: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     overflow-x: scroll;
-}
-
-.slideshow .slide{
+  }
+  
+  .slideshow .slide {
     width: 33rem;
     height: 100%;
-    transition: all .5s ease-in;
+    -webkit-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     margin: 0 2rem;
     padding: 0;
-}
-
-.slideshow .slide a{
+  }
+  
+  .slideshow .slide a {
     background-size: cover;
     background-position: center;
     width: 20rem;
     height: 20rem;
     border-radius: 50%;
-}
-
-.slideshow .slide h3{
+  }
+  
+  .slideshow .slide h3 {
     font-size: 1.7rem;
     color: black;
     margin-top: 1rem;
-}
-
-.slideshow .slide h3{
+  }
+  
+  .slideshow .slide h3 {
     font-size: 1.7rem;
     color: rgb(112, 112, 112);
     margin-top: 1rem;
-}
-.slideshow .slide-1 a{
+  }
+  .slideshow .slide-1 a {
     background-image: url("https://images.unsplash.com/photo-1599320207475-3d793554fda0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80");
-}
-
-.slideshow .slide-2 a{
+  }
+  
+  .slideshow .slide-2 a {
     background-image: url("https://images.unsplash.com/photo-1564645218026-797631447574?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
-}
-
-.slideshow .slide-3 a{
+  }
+  
+  .slideshow .slide-3 a {
     background-image: url("https://images.unsplash.com/photo-1585946472523-07df7e82d32e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
-}
-
-.slideshow .slide-4 a{
+  }
+  
+  .slideshow .slide-4 a {
     background-image: url("https://images.unsplash.com/photo-1557500813-f86c2da590b3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80");
-}
-
-.signup-form{
+  }
+  
+  .slideshow .slide-5 a {
+    background-image: url("https://images.unsplash.com/photo-1606130715597-140fc4c6ea0a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80");
+  }
+  
+  .signup-form {
     background-color: orangered;
     color: white;
-    height: 15rem;
+    height: 20rem;
     width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
-}
-
-.signup-form label{
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .signup-form label {
     width: 60%;
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
-}
-
-.signup-form input{
+  }
+  
+  .signup-form input {
     border: none;
+    width: -webkit-max-content;
+    width: -moz-max-content;
     width: max-content;
     padding: 1rem 3rem 1rem 1rem;
     font-size: 1.4rem;
     font-weight: 600;
-    color:rgba(112, 112, 112, .6);
+    color: rgba(112, 112, 112, 0.6);
     height: 5rem;
     margin-top: 2rem;
-}
-
-.signup-form button{
+  }
+  
+  .signup-form button {
     background-color: black;
     color: white;
     font-size: 1.4rem;
@@ -495,63 +605,244 @@ hr{
     border: none;
     padding: 1rem 3rem 1rem 1rem;
     text-align: center;
-    height: 5rem;
+    height: 7rem;
     text-transform: uppercase;
     margin-left: -1px;
-}
-
-footer{
-    margin-top: 2rem;
+  }
+  
+  footer {
     width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    background-color: orangered;
+    background-color: #333;
     height: 7rem;
     color: white;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
     justify-content: space-evenly;
     padding-top: 1rem;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-}
-
-
-footer section ul li{
-    font-size: 1.2rem;
-    letter-spacing: .2rem;
+    box-sizing: border-box;
+  }
+  
+  footer section ul li {
+    font-size: 1.1rem;
+    letter-spacing: 0.2rem;
     list-style: none;
-}
-
-footer .logo{
+  }
+  
+  footer .logo {
     font-size: 2rem;
-}
-
-footer div{
+  }
+  
+  footer div {
     font-size: 1.5rem;
-}
-
-@media (min-width: 800px){
-    header{
-        width: 100vw;
-        justify-content: space-between;
+  }
+  
+  @media (min-width: 750px) {
+    header {
+      /* width: 100vw; */
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-evenly;
     }
-
-    .menu-burger{
-        margin-left: 5rem;
+  
+    header .header-logo {
+      font-size: 3rem;
     }
-
-    .links .recipes{
-        width: 90%;
-        justify-content: center;
+  
+    header .social {
+      display: flex;
     }
-
-    .links .recipes .recipe-1 img{
-        max-width: 100rem;
+  
+    header .login {
+      display: flex;
     }
-
-    .links .recipes .recipe-1 .recipe-text{
-        padding: 4rem 0;
+  
+    header .login a {
+      font-size: 1.6rem;
+      color: orangered;
+      border: 1px solid orangered;
+      padding: 7px 12px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-left: 10px;
     }
-   
-    .links .recipes .big-guide .big-guide-kambucha img{
-        width: 750px;
+  
+    header .login a:hover {
+      color: white;
+      background-color: orangered;
     }
-
-}
+  
+    .social a i {
+      font-size: 2.5rem;
+      margin-right: 1rem;
+      color: orangered;
+    }
+  
+    .menu-burger {
+      margin-left: 5rem;
+    }
+  
+    .finder form {
+      width: 600px;
+      margin: 0 auto;
+    }
+  
+    .finder form input {
+      margin: 0 auto;
+      width: 60rem;
+    }
+  
+    .links .recipes {
+      width: 90%;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+  
+    .links .recipes .recipe-1 .article-img {
+      height: 35rem;
+      max-width: 85rem;
+    }
+  
+    .links .recipes .recipe-1 .recipe-text {
+      padding: 4rem 0;
+      max-width: 70%;
+    }
+  
+    .main-divider {
+      display: block;
+      max-width: 800px;
+    }
+  
+    .links .recipes .big-guide {
+      width: 100%;
+      /* max-width: 100%; */
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 4rem 0;
+    }
+  
+    .links .recipes .big-guide .big-guide-kambucha {
+      grid-column: 1/3;
+      grid-row: 1/2;
+      padding-bottom: 2rem;
+    }
+  
+    .links .recipes .big-guide .big-guide-kambucha figcaption {
+      font-size: 2.6rem;
+    }
+  
+    .links .recipes .big-guide .big-guide-kambucha img {
+      max-width: 1000px;
+      width: 100%;
+      height: auto;
+    }
+  
+    .big-guide {
+      max-width: 1000px;
+      margin: 0 auto;
+      max-height: max-content;
+    }
+  
+    .links .recipes .big-guide .big-guide-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+    }
+  
+    .links .recipes .big-guide .big-guide-text {
+      border-left: 1px solid lightgray;
+      padding-left: 2rem;
+    }
+  
+    .big-guide-text .big-guide-text-header {
+      display: none;
+    }
+  
+    .big-guide-block {
+      display: inline;
+      text-align: left;
+      grid-row: 2/3;
+      grid-column: 1/2;
+    }
+  
+    .big-guide-title {
+      display: block;
+      font-size: 6rem;
+    }
+  
+    .big-guide-description {
+      font-size: 2.2rem;
+      margin-top: 2rem;
+      letter-spacing: 0.2rem;
+    }
+  
+    .guide-text-block {
+      display: flex;
+      width: 100%;
+      justify-content: start;
+      align-items: start;
+  
+      margin-bottom: 2rem;
+    }
+  
+    .guide-text-block img {
+      display: inline;
+      width: 150px;
+      height: auto;
+    }
+  
+    .guide-text-block a {
+      display: inline;
+      font-size: 2rem;
+      font-weight: 500;
+      text-align: left;
+      margin-left: 2rem;
+    }
+  
+    .signup-form label {
+      font-size: 2.6rem;
+    }
+  }
+  
+  @media (min-width: 850px) {
+    .links .recipes .recipe-1 .recipe-text {
+      margin-top: -10rem;
+      width: 800px;
+    }
+    .recipe-block {
+      margin: 0 auto;
+      max-width: 1000px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      height: 700px;
+      margin-top: 2rem;
+    }
+  
+    .links .recipes .recipe-sub {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .links .recipes .recipe-sub img {
+      width: 300px;
+      max-height: 200px;
+      max-width: none;
+    }
+  
+    .links .recipes .recipe-sub .recipe-text {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    hr {
+      display: none;
+    }
+  }
+  
