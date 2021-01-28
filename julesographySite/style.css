@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #F0D6CB;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+nav{
+    display: none;
+    background-color: #F0D6CB;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    left: 100vw;
+    transition: left .5s ease-in;
+    padding: 50px;
+    z-index: 100;
+}
+
+.slideIn{
+    left: 0vw;
+}
+
+nav ul{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+nav li{
+    position: relative;
+    list-style: none;
+    left: 100vw;
+    transition: left .5s ease-in .5s;
+}
+
+a{
+    text-decoration: none;
+    font-size: 42px;
+    color: black;
+}
+
+header{
+    height: fit-content;    
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.burger{
+    width: 35px;
+    height: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index : 100;
+}
+
+.burger .line{
+    border-top: 2px solid black;
+    
+}
+
+.line.line-1{
+    width: 100%;
+}
+
+.line.line-2{
+    width: 75%;
+}
+.line.line-3{
+    width: 50%;
+}
+
+
+.main-img{
+    position: relative;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 80vw;
+    height: 80vh;
+    background-image: url(../julesographySite/images/landscape/DSC09775-Exposure.jpg);
+    background-size: cover;
+    background-position: center;
+    border: 8px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.main-img-a{
+    position: absolute;
+    width: 80vw;
+    height: 80vh;
+}
+
+.main-img h1{
+    color: white;
+    font-weight: 400;
+    margin: 10px;
+    font-size: 48px;
+    letter-spacing: 2;
+}
