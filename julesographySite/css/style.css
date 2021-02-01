@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    /* background-color: #F0D6CB; */
+    background-color: black;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+
+
+nav{
+    opacity: 0;
+    /* background-color: #F0D6CB; */
+    background-color: black;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    left: 100vw;
+    transition: left .5s ease-in;
+    padding: 50px 50px 50px 0;
+    z-index: 100;
+   
+}
+
+.slideIn{
+    opacity: 1;
+    left: 0vw;
+}
+
+nav ul{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+nav li{
+    position: relative;
+    list-style: none;
+    left: 100vw;
+    transition: left .5s ease-in .5s;
+}
+
+.main-img-a, nav a {
+    text-decoration: none;
+    font-size: 42px;
+    /* color: black; */
+    color: white;
+}
+
+header a{
+    text-decoration: none;
+    color: white;
+}
+
+header{
+    height: fit-content;    
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding-top: 20px;
+}
+
+.burger{
+    width: 35px;
+    height: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index : 100;
+}
+
+.burger .line{
+    border-top: 2px solid white;
+    
+}
+
+.line.line-1{
+    width: 100%;
+}
+
+.line.line-2{
+    width: 75%;
+}
+.line.line-3{
+    width: 50%;
+}
+
+
+
+.main-img{
+    position: relative;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 80vw;
+    height: 80vh;
+    background-image: url(../images/landscape/DSC09775-Exposure.jpg);
+    background-size: cover;
+    background-position: center;
+    border: 8px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-shadow: 20px 20px 48px rgba(255,255,255,.3);
+}
+
+.main-img-a{
+    position: absolute;
+    width: 80vw;
+    height: 80vh;
+    color: white;
+}
+
+.main-img h1{
+    color: white;
+    font-weight: 400;
+    margin: 10px;
+    font-size: 48px;
+    letter-spacing: 2;
+}
+
+@media(max-width: 720px){
+    .container{
+        width: 80vw;
+    }
+    .main-img{
+        background-image: url(../images/landscape/DSC09642-Exposure.jpg);
+    }
+    .main-img,.main-img-a{
+        width: 95vw;
+        height:85vh;
+    }
+
+    .main-img h1{
+        font-size: 26px;
+    }
+}

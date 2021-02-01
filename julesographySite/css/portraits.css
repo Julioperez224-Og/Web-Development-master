@@ -1,0 +1,149 @@
+.container-gallery {
+    /* margin: 0 auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    margin-top: 20px;
+  }
+
+  .img{
+      position: relative;
+  }
+
+.img-div-1{
+    width: 400px;
+    height: 400px;
+    background-position: center top;
+    background-size: cover;
+    background-image: url(../images/portraits/DSC_5219.jpg);
+}
+
+.img-div-2{
+    width: 400px;
+    height: 400px;
+    background-position: center top;
+    background-size: cover;
+    background-image: url(../images/portraits/DSC_5278.jpg);
+}
+.img-div-3{
+    width: 400px;
+    height: 400px;
+    background-position: center top;
+    background-size: cover;
+    background-image: url(../images/portraits/20180915-DSC_3064.jpg);
+}
+.img-div-4{
+    width: 400px;
+    height: 400px;
+    background-position: center top;
+    background-size: cover;
+    background-image: url(../images/portraits/20180915-DSC_3130.jpg);
+}
+
+.img-div-5{
+    width: 400px;
+    height: 400px;
+    background-position: center top;
+    background-size: 400px;
+    background-image: url(../images/portraits/DSC_7594-Exposure.jpg);
+}
+
+.img-div-6{
+    width: 400px;
+    height: 400px;
+    background-position: center top;
+    background-size: cover;
+    background-image: url(../images/portraits/DSC00048-Exposure.jpg);
+}
+
+.img-div-7{
+    width: 400px;
+    height: 400px;
+    background-position: center top;
+    background-size: cover;
+    background-image: url(../images/portraits/DSC01061-Exposure.jpg);
+}
+
+.img-div-8{
+    width: 400px;
+    height: 400px;
+    background-position: center top;
+    background-size: cover;
+    background-image: url(../images/portraits/DSC01075-Exposure.jpg);
+}
+
+.img-div-9{
+    width: 400px;
+    height: 400px;
+    background-position: center top;
+    background-size: cover;
+    background-image: url(../images/portraits/DSC02297-1.jpg);
+}
+
+
+.secret-info {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    background-color: rgba(0,0,0,.7);
+    top: 100%;
+    left: 0;
+    transition: all 0.5s ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .img:hover > .secret-info {
+    opacity: 1;
+    top: 0;
+    height: 100%;
+  }
+  
+  .info-btn {
+    border: 1px solid white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    background-color: white;
+    cursor: pointer;
+  }
+
+.img .focus-img{
+    position: fixed;
+    width: 700px;
+    height: fit-content;
+    max-width: 95%;
+    min-height: 70vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 100;
+    transition: all .3s ease-out;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.img-shadow{
+    display: none;
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      background-color: rgba(0,0,0,.7);
+      z-index: 98;
+  }
+
+  .display{
+      display: block;
+  }
+
+  .display-none{
+      display: none;
+  }

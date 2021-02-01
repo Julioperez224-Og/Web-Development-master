@@ -1,0 +1,36 @@
+.artist-container{
+    margin: 0 auto;
+    height: 60vh;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+
+}
+.artist-img{
+    width: 80vw;
+    height: auto;
+    box-shadow: 5px 5px 15px rgba(255,255,255,.2);
+    margin-bottom: 20px;
+}
+
+.artist-container p{
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+@media(min-width: 720px){
+    .artist-container{
+        flex-direction: row;
+        margin-top: 50px;
+    }
+
+    .artist-img{
+        width: 50%;
+        height: auto;
+        max-width: 600px;
+        margin-right: 40px;
+    }
+}
