@@ -29,7 +29,7 @@ nav{
     height: 100vh;
     width: 100vw;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     left: 100vw;
     transition: left .5s ease-in;
     padding: 50px 50px 50px 0;
@@ -46,7 +46,7 @@ nav ul{
     height: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: flex-end;
 }
 
@@ -57,11 +57,39 @@ nav li{
     transition: left .5s ease-in .5s;
 }
 
-.main-img-a, nav a {
+.main-img-a, nav a, .outer-nav {
     text-decoration: none;
     font-size: 42px;
     /* color: black; */
     color: white;
+}
+
+.inner-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 0px;
+    overflow: hidden;
+    transition: all .5s ease-in-out;
+}
+
+.inner-nav li a{
+    font-size: 18px;
+}
+
+.inner-nav li a:hover{
+    border-bottom: 1px solid white;
+}
+
+.outer-nav{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.outer-nav:hover .inner-nav, .outer-nav:focus .inner-nav{
+    height: 250px;
 }
 
 header a{
@@ -113,7 +141,7 @@ header{
     margin-top: 20px;
     width: 80vw;
     height: 80vh;
-    background-image: url(../images/landscape/DSC09775-Exposure.jpg);
+    background-image: url(../images/landscape/1.jpg);
     background-size: cover;
     background-position: center;
     border: 8px solid white;
@@ -138,13 +166,16 @@ header{
     letter-spacing: 2;
 }
 
+
 @media(max-width: 720px){
     .container{
         width: 80vw;
     }
     .main-img{
-        background-image: url(../images/landscape/DSC09642-Exposure.jpg);
+        background-image: url(../images/portraits/2.jpg);
     }
+
+    
     .main-img,.main-img-a{
         width: 95vw;
         height:85vh;

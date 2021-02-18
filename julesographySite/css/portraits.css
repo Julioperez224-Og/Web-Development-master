@@ -1,89 +1,77 @@
-.container-gallery {
-    /* margin: 0 auto; */
+/* /*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+/* .container-gallery {
+   
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     overflow-x: hidden;
     margin-top: 20px;
+    max-width: 100vw;
   }
 
   .img{
       position: relative;
   }
 
-.img-div-1{
+.img-div{
     width: 400px;
     height: 400px;
     background-position: center top;
     background-size: cover;
-    background-image: url(../images/portraits/DSC_5219.jpg);
+    max-width: 100vw;
+    max-height: 100vw;
+}  */
+
+.img-div-1{
+    background-image: url(../images/portraits/1.jpg);
 }
 
 .img-div-2{
-    width: 400px;
-    height: 400px;
-    background-position: center top;
-    background-size: cover;
-    background-image: url(../images/portraits/DSC_5278.jpg);
+    background-image: url(../images/portraits/2.jpg);
 }
 .img-div-3{
-    width: 400px;
-    height: 400px;
-    background-position: center top;
-    background-size: cover;
-    background-image: url(../images/portraits/20180915-DSC_3064.jpg);
+    background-image: url(../images/portraits/3.jpg);
 }
 .img-div-4{
-    width: 400px;
-    height: 400px;
-    background-position: center top;
-    background-size: cover;
-    background-image: url(../images/portraits/20180915-DSC_3130.jpg);
+    background-image: url(../images/portraits/4.jpg);
 }
 
 .img-div-5{
-    width: 400px;
-    height: 400px;
-    background-position: center top;
-    background-size: 400px;
-    background-image: url(../images/portraits/DSC_7594-Exposure.jpg);
+    background-image: url(../images/portraits/6.jpg);
 }
 
 .img-div-6{
-    width: 400px;
-    height: 400px;
-    background-position: center top;
-    background-size: cover;
-    background-image: url(../images/portraits/DSC00048-Exposure.jpg);
+    background-image: url(../images/portraits/7.jpg);
 }
 
 .img-div-7{
-    width: 400px;
-    height: 400px;
-    background-position: center top;
-    background-size: cover;
-    background-image: url(../images/portraits/DSC01061-Exposure.jpg);
+    background-image: url(../images/portraits/8.jpg);
 }
 
 .img-div-8{
-    width: 400px;
-    height: 400px;
-    background-position: center top;
-    background-size: cover;
-    background-image: url(../images/portraits/DSC01075-Exposure.jpg);
+    background-image: url(../images/portraits/9.jpg);
 }
 
 .img-div-9{
-    width: 400px;
-    height: 400px;
-    background-position: center top;
-    background-size: cover;
-    background-image: url(../images/portraits/DSC02297-1.jpg);
+    background-image: url(../images/portraits/10.jpg);
 }
 
 
-.secret-info {
+/* .secret-info {
     opacity: 0;
     position: absolute;
     width: 100%;
@@ -91,10 +79,18 @@
     background-color: rgba(0,0,0,.7);
     top: 100%;
     left: 0;
+    -webkit-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
     transition: all 0.5s ease-in;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   
   .img:hover > .secret-info {
@@ -115,13 +111,19 @@
 .img .focus-img{
     position: fixed;
     width: 700px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
-    max-width: 95%;
+    max-width: 100%;
     min-height: 70vh;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
     z-index: 100;
+    -webkit-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
     transition: all .3s ease-out;
     background-size: contain;
     background-position: center;
@@ -135,7 +137,9 @@
       height: 100vh;
       top: 50%;
       left: 50%;
-      transform: translate(-50%,-50%);
+      -webkit-transform: translate(-50%,-50%);
+          -ms-transform: translate(-50%,-50%);
+              transform: translate(-50%,-50%);
       background-color: rgba(0,0,0,.7);
       z-index: 98;
   }
@@ -146,4 +150,4 @@
 
   .display-none{
       display: none;
-  }
+  } */
