@@ -52,7 +52,7 @@ yargs.command({
 yargs.command({
     command:"remove",
     describe:"Removes a note",
-    handler: function(argv){
+    handler (argv){
         notes.removeNotes(argv.title)
     }
 })
@@ -60,16 +60,27 @@ yargs.command({
 yargs.command({
     command:"list",
     describe:"Show the list of notes",
-    handler: function(){
-        console.log("Here is your list");
+    handler() {
+        notes.listNotes();
     }
 })
 
 yargs.command({
     command:"read",
     describe:"Read the next note",
-    handler: function(){
-        console.log("Read the next note please ");
+    builder:{
+         // Takes in a title to add
+         title: {
+            // Description of the title
+            describe:"Note title",
+            // Makes having a title mandatory, if a title is provided without data is is set to a boolean
+            demandOption: true,
+            // Makes it so a string must be provided
+            type:"string"
+        }
+    },
+    handler(argv) {
+        notes.readNotes(argv.title);
     }
 })
 
