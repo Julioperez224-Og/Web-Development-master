@@ -75,6 +75,7 @@ const listNotes = () => {
 }
 
 // debugger is used to find errors in the code
+// use chrome://inspect to help debug on google chrome
 debugger
 
 const readNotes = (title) => {

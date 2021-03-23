@@ -4,7 +4,7 @@ const validator = require("validator");
 const chalk = require("chalk");
 // Yargs helps you build interactive command line tools, by parsing arguments and generating an elegant user interface.
 const yargs = require("yargs");
-const { describe } = require("yargs");
+const {describe} = require("yargs");
 
 // We will use JSON to read and write to the file system
 
@@ -16,7 +16,6 @@ const { describe } = require("yargs");
 //     console.log("Add a note");
 // }
 
-
 yargs.version("1.1.0")
 
 // Yargs has a command function that lets you have predefined rules and handlers
@@ -24,59 +23,59 @@ yargs.version("1.1.0")
 // Create a command
 yargs.command({
     // sets the command to add if you pass Add into the prompt
-    command:"add",
+    command: "add",
     // describes the command
-    describe:"Adds a note",
+    describe: "Adds a note",
     builder: {
         // Takes in a title to add
         title: {
             // Description of the title
-            describe:"Note title",
+            describe: "Note title",
             // Makes having a title mandatory, if a title is provided without data is is set to a boolean
             demandOption: true,
             // Makes it so a string must be provided
-            type:"string"
+            type: "string"
         },
-        body:{
-            describe:"This is the body",
-            demandOption:true,
-            type:"string"
+        body: {
+            describe: "This is the body",
+            demandOption: true,
+            type: "string"
         }
     },
     // A function is ran once the add command is provided
-    handler: function(argv){
-        notes.addNotes(argv.title,argv.body)
+    handler: function(argv) {
+        notes.addNotes(argv.title, argv.body)
     }
 });
 
 yargs.command({
-    command:"remove",
-    describe:"Removes a note",
-    handler (argv){
+    command: "remove",
+    describe: "Removes a note",
+    handler(argv) {
         notes.removeNotes(argv.title)
     }
 })
 
 yargs.command({
-    command:"list",
-    describe:"Show the list of notes",
+    command: "list",
+    describe: "Show the list of notes",
     handler() {
         notes.listNotes();
     }
 })
 
 yargs.command({
-    command:"read",
-    describe:"Read the next note",
-    builder:{
-         // Takes in a title to add
-         title: {
+    command: "read",
+    describe: "Read the next note",
+    builder: {
+        // Takes in a title to add
+        title: {
             // Description of the title
-            describe:"Note title",
+            describe: "Note title",
             // Makes having a title mandatory, if a title is provided without data is is set to a boolean
             demandOption: true,
             // Makes it so a string must be provided
-            type:"string"
+            type: "string"
         }
     },
     handler(argv) {
