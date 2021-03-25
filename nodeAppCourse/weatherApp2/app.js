@@ -44,8 +44,12 @@ const url = `${url_mapbox}${decodeLocation}.json?${token_mapbox}`
 request({url:url, json:true}, (error, response) => {
     if(error){
         console.log("Couldn't connect to mapbox")
+    }  
+    else if(response.body.features.length === 0){
+        console.log("Could not find coordinates")
     }
     else{
+        
         // set a new url with the coordinates provided by mapbox but invert the coordinates. mapbox gives it in a way that weatherStack does not like
         const url = `${url_weather}&query=${response.body.features[0].geometry.coordinates[1]},${response.body.features[0].geometry.coordinates[0]}&units=f`;
         // Call a new request with the url, it is call be a weatherstack json file
@@ -57,8 +61,6 @@ request({url:url, json:true}, (error, response) => {
             else if(response.body.error){
                 console.log("Unable to find location")
             }            
-            
-            
             else
             {
                  // create different weather variables with the responses
@@ -73,8 +75,6 @@ request({url:url, json:true}, (error, response) => {
             }
         })
     }
-    
-
 })
 
 
