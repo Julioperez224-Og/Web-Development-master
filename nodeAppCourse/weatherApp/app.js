@@ -1,6 +1,10 @@
 const request = require('request')
 const geocode = require("./utils/geocode.js")
 const forecast = require("./utils/forecast.js");
+const yargs = require("yargs");
+const {describe} = require("yargs");
+
+yargs.version("1.1.0")
 
 // const url = 'http://api.weatherstack.com/current?access_key=e84129bc20b99e3b1452c36379b4e3ff&query=42.3605,-71.0596&units=f'
 
@@ -28,17 +32,39 @@ const geocodeURL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/philadelph
 //     }
 // })
 
-
-geocode("Boston ", (error, data)=>{
-    if(error){
-        console.log("error", error)
+// process.argv retrieves the array of arguments entered into the command line
+geocode(process.argv[2], (error, data)=>{
+    if(!process.argv[2]){
+        return console.log("Please input a valid location.")
+    }
+    // console.log(yargs.argv.search)
+    else if(error){
+        return console.log("error", error)
     }
     else{
-        console.log("data", data)
+        // console.log("data", data)
+        // Callback chaining 
+        // Add a function and use the data provided by the previous callback in order to obtain a new callback return
+        forecast(data.latitude,data.longitude, (error, forecastData) => {
+            if(error){
+                return console.log("error", error)
+            }
+            else{
+                // data object is the data returned from geocode
+                console.log(data.location)
+                // forecastData object is the data returned from the forecast function
+                // console.log(forecastData.region)
+                // console.log(forecastData.country)
+                // console.log(forecastData.temp)
+                // console.log(forecastData.precip)
+                console.log(`It is ${forecastData.weather} in ${data.location}, ${forecastData.region}, in ${forecastData.country} it is ${forecastData.temp} with a ${forecastData.precip}.`)
+
+
+            }
+        })
     }
 })
+    
 
-forecast(45.432,-73.234, (error, data) => {
-    console.log('Error', error)
-    console.log('Data', data)
-  })
+
+yargs.parse()

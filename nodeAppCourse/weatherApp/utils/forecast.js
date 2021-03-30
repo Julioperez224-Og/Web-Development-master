@@ -15,13 +15,20 @@ const forecast = (lat,long,callback) =>{
         if(err){
             callback("Unable to connect to weatherstack", err);
         } 
-        else if(isNaN(parseInt(lat)) || isNaN(parseInt(long))){
+        else if(res.body.error){
             callback("Location not found",err)
         }
         else{
             const toDate = res.body.location.localtime.substr(0,11);
-            callback(undefined,{
-                forecast: res.body.forecast
+            callback(undefined, {
+                location: res.body.location.name,
+                region: res.body.location.region,
+                country:  res.body.location.country,
+                lat: res.body.location.lat,
+                long: res.body.location.lon,
+                temp: res.body.current.temperature,
+                weather: res.body.current.weather_descriptions[0],
+                precip: res.body.current.precip
             })
         }
     })
