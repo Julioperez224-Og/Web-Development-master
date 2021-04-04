@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Web Server</title>
+</head>
+<body>
+    <div class="nav">
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/help">Find Help</a>
+        <a href="/weather">Weather</a>
+    </div>
+    
+    <h1>{{title}}</h1>
+    <h2>Header Partial</h2>
+    <p>Don't forget in order to use partials you need to set the correct path with <b>hbs.registerPartials()</b></p>
+    <p>You will insert the partials direct path by using <b>const partialPath = path.join(__dirname,"../templates/partials")</b>;</p>
+    <p><b style="color:red; font-size: 32px">hbs.registerPatrials(partialPath)</b></p>

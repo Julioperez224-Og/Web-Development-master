@@ -33,7 +33,7 @@ const geocodeURL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/philadelph
 // })
 
 // process.argv retrieves the array of arguments entered into the command line
-geocode(process.argv[2], (error, data)=>{
+geocode(process.argv[2], (error, {latitude,longitude,locationn})=>{
     if(!process.argv[2]){
         return console.log("Please input a valid location.")
     }
@@ -45,20 +45,25 @@ geocode(process.argv[2], (error, data)=>{
         // console.log("data", data)
         // Callback chaining 
         // Add a function and use the data provided by the previous callback in order to obtain a new callback return
-        forecast(data.latitude,data.longitude, (error, forecastData) => {
+        
+        // location and current are objects called from the callback function
+        forecast(latitude,longitude, (error, {location, current}) => {
             if(error){
                 return console.log("error", error)
             }
             else{
                 // data object is the data returned from geocode
-                console.log(data.location)
+                // console.log(data.location)
                 // forecastData object is the data returned from the forecast function
                 // console.log(forecastData.region)
                 // console.log(forecastData.country)
                 // console.log(forecastData.temp)
                 // console.log(forecastData.precip)
-                console.log(`It is ${forecastData.weather} in ${data.location}, ${forecastData.region}, in ${forecastData.country} it is ${forecastData.temp} with a ${forecastData.precip}.`)
-
+                const {name, country,region,localtime} = location;
+                const {weather_descriptions,temperature,precip} = current;
+                
+                console.log(`In ${name}, ${region}, ${country}`)
+                console.log(`The weather is ${weather_descriptions[0]} out. It is currently ${temperature} degrees with ${precip}% chance of rain.`)
 
             }
         })

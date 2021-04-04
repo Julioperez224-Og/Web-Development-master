@@ -11,25 +11,20 @@ const request = require("request");
 
 const forecast = (lat,long,callback) =>{
     const url = `http://api.weatherstack.com/forecast?access_key=e84129bc20b99e3b1452c36379b4e3ff&query=${lat},${long}&units=f`
-    request({url:url, json:true}, (err,res) => {
+    // body is found in the response object response.body
+    request({url, json:true}, (err,{body}) => {
         if(err){
             callback("Unable to connect to weatherstack", err);
         } 
-        else if(res.body.error){
+        else if(body.error){
             callback("Location not found",err)
         }
         else{
-            const toDate = res.body.location.localtime.substr(0,11);
+            const toDate = body.location.localtime.substr(0,11);
             callback(undefined, {
-                location: res.body.location.name,
-                region: res.body.location.region,
-                country:  res.body.location.country,
-                lat: res.body.location.lat,
-                long: res.body.location.lon,
-                temp: res.body.current.temperature,
-                weather: res.body.current.weather_descriptions[0],
-                precip: res.body.current.precip
-            })
+                location,
+                current
+            } = body)
         }
     })
 
