@@ -5,6 +5,9 @@ const path = require("path")
 const express = require("express");
 const app = express();
 const hbs = require("hbs")
+const request = require("request");
+const geocode = require("../src/utils/geocode");
+const forecast = require("../src/utils/forecast");
 // ------------------------------ Advanced Templating ---------------------------------------------
     // Use hbs / create two new folders in templates. 
     // Fire template folder call views and second partials
@@ -57,17 +60,73 @@ app.get("/help", (req,res)=>{
     })
 })
 app.get("/weather", (req,res)=>{
-    res.send({
-        "location":"Baltimore",
-        "temperature": 95,
-        name: "Julio Perez"
-    });
+    // checks to see if a query was sent to address if not return the json error
+    if(!req.query.address){
+        return res.send({
+            "error":"please enter an address"
+        })
+    }
+
+    geocode(req.query.address, (error, {latitude,longitude,locationn})=>{
+        // console.log(yargs.argv.search)
+        if(error){
+            return res.send({
+                "error": error
+            })
+        } 
+        else{
+            // Callback chaining 
+            // Add a function and use the data provided by the previous callback in order to obtain a new callback return
+            
+            // location and current are objects called from the callback function
+            forecast(latitude,longitude, (error, {location, current}) => {
+                if(error){
+                    return res.send({
+                        "error":"error"
+                    })
+                }
+                else{
+                    // data object is the data returned from geocode
+                    // console.log(data.location)
+                    // forecastData object is the data returned from the forecast function
+                    // console.log(forecastData.region)
+                    // console.log(forecastData.country)
+                    // console.log(forecastData.temp)
+                    // console.log(forecastData.precip)
+
+                    const {name, country,region,localtime} = location;
+                    const {weather_descriptions,temperature,precip} = current;
+
+                    res.send({
+                        name,
+                        region,
+                        country,
+                        weather_descriptions,
+                        temperature,
+                        precip,
+                        address:req.query.address
+                    })
+
+                    
+                    
+                    // console.log(`In ${name}, ${region}, ${country}`)
+                    // console.log(`The weather is ${weather_descriptions[0]} out. It is currently ${temperature} degrees with ${precip}% chance of rain.`)
+    
+                }
+            })
+        }
+    })
+
+    // res.send(geocode(req.query.address, ()=>{}));
 })
+
+
 
 app.get("/help/*", (req,res)=>{
     res.render("404",{
         title: "article",
-        message: "article not found"
+        message: "article not found",
+        name: "Julio Perez"
     })
     
 })
@@ -75,7 +134,8 @@ app.get("/help/*", (req,res)=>{
 app.get("*", (req,res)=>{
     res.render("404",{
         title:"Error",
-        message:"Page not found"
+        message:"Page not found",
+        name: "Julio Perez"
     })
 })
 
