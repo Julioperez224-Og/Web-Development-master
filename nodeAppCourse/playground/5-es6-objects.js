@@ -38,11 +38,12 @@ console.log(`The ${productLabel} cost us ${price} and we have ${stock} left in s
 
 
 // Example use
-const  transaction = (type,{label,price,stock}) => {
+// If an object is not provided adding a default value for object will turn the params into an object
+const  transaction = (type,{label="A label that wasn't added",price=0,stock=0} = {}) => {
     console.log(`This will be an ${type}`);
     console.log(`${label} will sell for ${price} and we will sell the whole stock of ${stock} items. The total will be $${price * stock}.`)
     return price*stock
 }
 
 
-console.log(transaction("order", product))
+console.log(transaction("order"))

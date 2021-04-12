@@ -16,7 +16,7 @@ const forecast = (lat,long,callback) =>{
         if(err){
             callback("Unable to connect to weatherstack", err);
         } 
-        else if(body.error){
+        else if(body.err){
             callback("Location not found",err)
         }
         else{

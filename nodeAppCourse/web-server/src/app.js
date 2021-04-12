@@ -62,16 +62,19 @@ app.get("/help", (req,res)=>{
 app.get("/weather", (req,res)=>{
     // checks to see if a query was sent to address if not return the json error
     if(!req.query.address){
+        // Used a return to stop the code from running
         return res.send({
             "error":"please enter an address"
         })
     }
-
-    geocode(req.query.address, (error, {latitude,longitude,locationn})=>{
-        // console.log(yargs.argv.search)
+    // Run geocode to get the lat,long and location
+    //  ={} will set the default param to an object. fixes the error of missing params
+    geocode(req.query.address, (error, {latitude,longitude,location} = {})=>{
+       
+        // check if there is an error trying to retrieve data
         if(error){
             return res.send({
-                "error": error
+                error
             })
         } 
         else{
@@ -82,7 +85,7 @@ app.get("/weather", (req,res)=>{
             forecast(latitude,longitude, (error, {location, current}) => {
                 if(error){
                     return res.send({
-                        "error":"error"
+                        error
                     })
                 }
                 else{
@@ -98,6 +101,7 @@ app.get("/weather", (req,res)=>{
                     const {weather_descriptions,temperature,precip} = current;
 
                     res.send({
+                        forecast: `Today is ${weather_descriptions[0]} in ${name}, ${region}. The temperature is ${temperature} degrees with a ${precip}% chance of rain.`,
                         name,
                         region,
                         country,

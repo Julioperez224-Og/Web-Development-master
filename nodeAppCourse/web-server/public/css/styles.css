@@ -46,3 +46,7 @@ h1{
     width: 250;
     height: auto;
 }
+
+button{
+    border-radius: 5px;
+}
