@@ -1,0 +1,13 @@
+{
+    "emmet.preferences": {
+    
+    },
+    "emmet.includeLanguages": {
+        "ejs": "html",
+    },
+    "emmet.excludeLanguages": [
+
+        "markdown"
+    ]
+
+}

@@ -27,21 +27,33 @@ fetch("http://puzzle.mead.io/puzzle").then((response)=>{
 
 const weatherform = document.querySelector("form");
 const weatherInput = document.querySelector("input")
-const h1 = document.querySelector("h1");
+const pLocation = document.querySelector("#p-location")
+const pForecast = document.querySelector("#p-forecast")
+
+
 weatherform.addEventListener("submit", (e)=>{
     e.preventDefault()
-    let address = `http://localhost:3000/weather/?address=${weatherInput.value}`
+    let address = `/weather/?address=${weatherInput.value}`
+    pForecast.textContent = "Loading";
+    // pForecast.textContent = "Loading";
+
     fetch(address).then((response)=>{
         response.json().then((data)=>{
             if(data.error){
-                console.log(data.error)
+                pForecast.textContent = data.error
+                // console.log(data.error)
             }
             else{
-                console.log(data.forecast)
-                console.log(data.address)
-                console.log(data.temperature)
+                pLocation.textContent = data.address;
+                pForecast.textContent = data.cast;
+                // console.log(data.maxtemp)
+                // console.log(data.forecast)
+                // console.log(data.address)
+                // console.log(data.temperature)
             }
             
         })
     })
 })
+
+// console.log(pLocation.value)

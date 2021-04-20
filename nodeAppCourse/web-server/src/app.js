@@ -21,7 +21,8 @@ const publicDirectorPath = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../templates/views");
 const partialPath = path.join(__dirname,"../templates/partials");
 
-
+// env is an object that has environment variables
+const port = process.env.PORT || 3000;
 // You then need to tell node to look for the path
 // set to view engine allows hbs modules be stored in the view folder
 // -----------------------------------Setup Handlebars Engine and Views Locations--------------------------------------
@@ -82,7 +83,7 @@ app.get("/weather", (req,res)=>{
             // Add a function and use the data provided by the previous callback in order to obtain a new callback return
             
             // location and current are objects called from the callback function
-            forecast(latitude,longitude, (error, {location, current}) => {
+            forecast(latitude,longitude, (error, {location, current, forecast:forecast_data}) => {
                 if(error){
                     return res.send({
                         error
@@ -96,19 +97,28 @@ app.get("/weather", (req,res)=>{
                     // console.log(forecastData.country)
                     // console.log(forecastData.temp)
                     // console.log(forecastData.precip)
-
+                 
                     const {name, country,region,localtime} = location;
                     const {weather_descriptions,temperature,precip} = current;
-
+                    // const toDate = forecast_data.forecast.localtime.substr(0,11);
+                    // // console.log(localtime)
+                    let date = localtime.substr(0,9)
+                    let day = localtime.substr(9,1)
+                    parseInt(day)
+                    let newDay = `${date}${day-1}`
+                    const forecasted = forecast_data.forecast[newDay];
+                    const {maxtemp,mintemp} = forecasted;
                     res.send({
-                        forecast: `Today is ${weather_descriptions[0]} in ${name}, ${region}. The temperature is ${temperature} degrees with a ${precip}% chance of rain.`,
+                        cast: `Today is ${weather_descriptions[0]} in ${name}, ${region}. The temperature is ${temperature} degrees with a ${precip}% chance of rain. Max temperature of ${maxtemp} degrees`,
                         name,
                         region,
                         country,
                         weather_descriptions,
                         temperature,
                         precip,
-                        address:req.query.address
+                        address:req.query.address,
+                        maxtemp,
+                        mintemp
                     })
 
                     
@@ -146,9 +156,9 @@ app.get("*", (req,res)=>{
 
 
 
-app.listen(3000, (error)=>{
+app.listen(port, (error)=>{
     if(!error){
-        console.log("Server connected");
+        console.log("Server connected " + port);
     }
     else{
         console.log("Connection Error", error);
