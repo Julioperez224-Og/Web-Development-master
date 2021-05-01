@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav{
+    position: fixed;
+    width: 100vw;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 2px 70px -30px;
+    padding: 20px 200px;
+    transition: all .3s ease;
+}
+
+.logo{
+    height: 30px;
+    display: flex;
+    justify-content: baseline;
+    align-items: baseline;
+}
+
+.logo h1{
+    font-size: 20px;
+}
+
+.color{
+    height: 15px;
+    width: 5px;
+    margin-right: 2px;
+}
+
+.color1{
+    background-color: red;
+}
+.color2{
+    background-color: blue;
+}.color3{
+    background-color: green;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    padding-right: 10px;
+    border-radius: 50px;
+}
+
+.login-container{
+    margin-top: -10px;
+    display: flex;
+}
+
+.btn{
+    width: 125px;
+    height: 50px;
+    padding: 10px 20px;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-signup{
+    background-color: blue;
+}
+
+.btn-login{
+    background-color: red;
+}
+
+.burger{
+    position: absolute;
+    right: 20px;
+    top: 2.5%;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    z-index: 10;
+    display: none;
+}
+
+.burger-line{
+    height: 2px;
+    width: 100%;
+    background-color: black;
+}
+
+.open{
+    height: 70vh;
+    display: flex;
+}
+
+@media (max-width: 1024px){
+
+    .burger{
+        display: flex;
+    }
+    nav{
+        height: 100vh;
+        flex-direction: column;
+        position: absolute;
+        justify-content: flex-start;
+        overflow: hidden;
+        padding: 0 50px;
+        padding-top: 20px;
+        transition: all .5s ease;
+        height: 0;
+        padding-bottom: 25px;
+    }
+   .link-container{
+       height: 33vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 20px;
+    }
+    .link-container a{
+        margin-bottom: 20px;
+    }
+
+
+}
