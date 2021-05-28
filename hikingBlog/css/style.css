@@ -17,6 +17,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
 }
 /* Header and Menu */
 
@@ -163,22 +164,22 @@ nav ul li:hover .list-subtopics, nav ul li:focus-within .list-subtopics{
 /* Card */
 
 .card-container{
-    max-width: 100vw;
     width: 350px;
-    max-height: 350px;
+    height: max-content;
     display: flex;
     justify-content: start;
     overflow: hidden;
+    
 }
 
 .card{
-    width: 350px;
     min-width: 350px;
     height: 350px;
+    max-height: max-content;
     background-color: var(--light-gray);
     position: relative;
     transition: left .5s ease;
-
+    /* flex-basis: 0; */
 }
 
 .card-container .card{
@@ -266,6 +267,7 @@ footer{
     justify-content: start;
     align-items: left;
     flex-wrap: wrap;
+    overflow-x: auto;
 }
 
 footer p{
