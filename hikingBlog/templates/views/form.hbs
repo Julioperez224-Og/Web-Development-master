@@ -1,0 +1,41 @@
+{{> header }}
+<link rel="stylesheet" href="css/form.css">
+{{>menu}}
+<div class="form-img"></div>
+<form action="/blog" method="POST">
+<h1>Blog Submission</h1>
+    <div class="form-environment">
+        <label for="environment">Choose a topic</label>
+        <select name="environment" id="topic">
+            <option value="forest">Forest</option>
+            <option value="tundras">Tundras</option>
+            <option value="mountain">Mountain</option>
+            <option value="desert">Desert</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    
+    <div class="form-subtopic">
+        <label for="subtopic">Choose a subtopic</label>
+        <select name="subtopic" id="subtopic">
+            <option value="equipment">Equipment</option>
+            <option value="places">Places</option>
+            <option value="tips">Tips and tricks</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+
+    <div class="form-blog">
+        <label for="title">Blog Title</label>
+        <input type="text" name="title" id="title">
+
+        <label for="message">Message</label>
+        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+    </div>
+
+    
+</form>
+
+
+
+{{> footer }}
