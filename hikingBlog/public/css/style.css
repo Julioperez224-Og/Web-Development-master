@@ -43,6 +43,8 @@ header{
     height: 50px;
     padding: 10px;
     border-radius: 50%;
+    text-decoration: none;
+    color: var(--main-color);
 }
 
 .burger{
@@ -282,7 +284,7 @@ footer{
 }
 
 footer p{
-    font-size: 2.2rem;
+    font-size: 2rem;
     padding: 1rem 0;
     font-weight: lighter;
 }
@@ -290,7 +292,7 @@ footer p{
 footer a{
     text-decoration: none;
     color: var(--secondary-color);
-    font-size: 2.6rem;
+    font-size: 2rem;
     border-bottom: 1px solid var(--secondary-color);
     padding-bottom: .2rem;
 }

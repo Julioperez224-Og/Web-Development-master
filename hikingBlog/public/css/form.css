@@ -10,7 +10,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 300px;
+    height: 400px;
     width: 100vw;
 }
 
@@ -45,7 +45,7 @@ form div{
     margin: 20px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: flex-end;
     flex-wrap: wrap;
 }
@@ -65,17 +65,52 @@ form div{
 
 
 
-label{
+form label{
     font-size: 20px;
+    margin-bottom: 10px;
 }
 
-input, select{ 
-    max-width: 100vw;
+form input{
+    margin-bottom: 20px;
+}
+
+form select option, form select{
+    font-size: 16px;
+}
+
+form input, form select{ 
+    max-width: 90vw;
     width: 200px;
     padding: 20px;
+    border: none;
+}
+
+.form-blog textarea{
+    height: 300px;
+    max-width: 95%;
+    border: none;
+}
+
+/* .sm-margin-top{
+    margin-top: 20px;
+} */
+
+button{
+    border: none;
+    font-size: 22px;
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: var(--main-color);
+    color: var(--secondary-color);
 }
 
 footer{
     position: relative;
-    top: 400px;
+    top: 800px;
 }
