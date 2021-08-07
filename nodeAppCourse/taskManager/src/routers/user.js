@@ -1,15 +1,17 @@
 const express = require("express");
 const router = new express.Router();
 const User = require("../models/user");
-
+const auth = require("../middleware/auth")
 
 // users
 router.post("/users", async (req,res)=>{
 
     const user =  new User(req.body); 
-    try{   
+    try{
+
         await user.save();
-        res.status(201).send(user)
+        const token = await user.generateAuthToken();
+        res.status(201).send({user, token})
     }catch(e){
         res.status(400).send(e)
     }
@@ -22,23 +24,16 @@ router.post("/users/login", async (req,res)=>{
     try{
         const user = await User.findByCredentials(email,password)
         const token = await user.generateAuthToken()
+        console.log(token)
         res.send({user,token});
     }catch(e){  
         res.status(400).send(e)
     }   
 })
-
-router.get("/users", async (req,res)=>{
-    try{
-        const users = await User.find({})
-        if(!users){
-            return res.status(404).send();
-        }
-        res.send(users)
-    }catch(e){
-        res.status(500).send(e)
-    }
-
+// get your own profile
+router.get("/users/me",auth, async (req,res)=>{
+    // You dont need to find the user id because the middleware already does that for you
+    res.send(req.user);
 })
 
 router.get("/users/:id", async (req,res)=>{

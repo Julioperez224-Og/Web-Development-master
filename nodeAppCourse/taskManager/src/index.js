@@ -28,6 +28,12 @@ app.use(express.urlencoded());
 const userRouter = require("./routers/user");
 app.use(userRouter)
 
+
+// Creating middleware
+// app.use((req,res,next)=>{
+//     res.status(503).send("Under Maintenance")
+// })
+
 // Dictate where the partials will live
 const viewsPath = path.join(__dirname,"../templates/views")
 const partialsDirectoryPath = path.join(__dirname, "../templates/partials")
